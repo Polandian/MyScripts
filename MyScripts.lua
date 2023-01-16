@@ -76,7 +76,6 @@ game:GetService("UserInputService").InputBegan:connect(function(inputObject, gam
 			teleportingEnabled = true
 		
 			while teleportingEnabled == true do
-				print("hello world")
 				humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
 				wait(0.1)
 			
