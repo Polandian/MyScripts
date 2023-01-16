@@ -2,8 +2,10 @@ local u = game:GetService("UserInputService")
 local teleportingEnabled = false
 local introSaid = false
 
+
+
 if introSaid == false then
-	print(" \nF = Random Teleport \n SPACE = Infinite Jump \n G = Find Location \n N = Start Random Bang Session \n M = Stop Random Bang Session")
+	print(" \n F = Random Teleport \n SPACE = Infinite Jump \n G = Find Location \n N = Start Random Bang Session \n M = Stop Random Bang Session")
 	introSaid = true
 end
 
@@ -43,6 +45,7 @@ game:GetService("UserInputService").InputBegan:connect(function(inputObject, gam
 		if input.KeyCode == Enum.KeyCode.G then
 			local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
 			print(pl.CFrame)
+			wait(0.1)
 		end
 
     		-- TELEPORT TO SPESIFIC LOCATION
@@ -55,6 +58,7 @@ game:GetService("UserInputService").InputBegan:connect(function(inputObject, gam
    	 	if input.KeyCode == Enum.KeyCode.M then
 			teleportingEnabled = false
 			warn("You stopped teleporting!")
+			wait(0.1)
     		end
 
 		-- PICKS RANDOM PLAYER TO START BANGING SECTION
