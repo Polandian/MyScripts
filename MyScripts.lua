@@ -10,7 +10,7 @@ end
 
 u.InputBegan:Connect(function(input) 
 
-	-- TELEPORT TO A RANDOM PLAYER IN SERVER
+    -- TELEPORT TO A RANDOM PLAYER IN SERVER
     if input.KeyCode == Enum.KeyCode.F then
         local Players = game.Players:GetPlayers()
 		local nplrs = #Players
@@ -31,7 +31,7 @@ u.InputBegan:Connect(function(input)
 		pl.CFrame = game.Players[Randomplayer].Character.HumanoidRootPart.CFrame
     end
 
-	-- INFINITE JUMP
+    -- INFINITE JUMP
     if input.KeyCode == Enum.KeyCode.Space then
 		local humanoid = game.Players.LocalPlayer.Character.Humanoid
 		humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
@@ -44,17 +44,17 @@ u.InputBegan:Connect(function(input)
 		print(pl.CFrame)
 	end
 
-	-- TELEPORT TO SPESIFIC LOCATION
+    -- TELEPORT TO SPESIFIC LOCATION
 	-- if input.KeyCode == Enum.KeyCode.H then
 		-- local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
 		-- pl.CFrame = CFrame.new(413, 45, 4576)
 	-- end
 
-	-- STOPS BANGING SESSION
-	if input.KeyCode == Enum.KeyCode.M then
-		teleportingEnabled = false
-		warn("You stopped teleporting!")
-	end
+    -- STOPS BANGING SESSION
+    if input.KeyCode == Enum.KeyCode.M then
+	teleportingEnabled = false
+	warn("You stopped teleporting!")
+    end
 
 	-- PICKS RANDOM PLAYER TO START BANGING SECTION
     if input.KeyCode == Enum.KeyCode.N then
