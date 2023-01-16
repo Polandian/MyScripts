@@ -1,6 +1,7 @@
 local u = game:GetService("UserInputService")
 local teleportingEnabled = false
 local introSaid = false
+local banging = false
 
 local mouse = game.Players.LocalPlayer:GetMouse()
 
@@ -32,6 +33,10 @@ u.InputBegan:Connect(function(input)
 
 	-- TELEPORT TO A RANDOM PLAYER IN SERVER
     if input.KeyCode == Enum.KeyCode.F then
+		if banging = true then
+			game.Players.LocalPlayer:Kick("Close the fucking app bitch")
+		end
+
         local Players = game.Players:GetPlayers()
 		local nplrs = #Players
 		local Randomplayer1 = nil
@@ -71,6 +76,7 @@ u.InputBegan:Connect(function(input)
 	-- STOPS BANGING SESSION
 	if input.KeyCode == Enum.KeyCode.M then
 		teleportingEnabled = false
+		banging = false
 		warn("You stopped teleporting!")
 	end
 
@@ -91,6 +97,7 @@ u.InputBegan:Connect(function(input)
 		print(Randomplayer)
 
 		teleportingEnabled = true
+		banging = true
 		
 		while teleportingEnabled == true do
 			humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
