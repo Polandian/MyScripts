@@ -6,7 +6,7 @@ local banging = false
 local mouse = game.Players.LocalPlayer:GetMouse()
 
 if introSaid == false then
-	print(" \n F = Random Teleport \n SPACE = Infinite Jump \n G = Find Location \n N = Start Random Bang Session \n M = Stop Random Bang Session")
+	print(" \n F = Random Teleport \n SPACE = Infinite Jump \n G = Find Location \n N = Start Random Bang Session \n M = Stop Random Bang Session \n Hold CTRL + Click = Teleport to cursor location")
 	introSaid = true
 end
 
