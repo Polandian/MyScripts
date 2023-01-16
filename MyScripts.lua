@@ -2,7 +2,7 @@ local u = game:GetService("UserInputService")
 local teleportingEnabled = false
 local introSaid = false
 
-
+local mouse = game.Players.LocalPlayer:GetMouse()
 
 if introSaid == false then
 	print(" \n F = Random Teleport \n SPACE = Infinite Jump \n G = Find Location \n N = Start Random Bang Session \n M = Stop Random Bang Session")
@@ -12,8 +12,23 @@ end
 local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
 local humanoid = game.Players.LocalPlayer.Character.Humanoid
 
+function GetMouseCFrame() -- MOUSE CFRAME FINDER
+	return mouse.Hit
+end
 
-u.InputBegan:Connect(function(input) 
+u.InputBegan:Connect(function(input)
+	-- CTRL TELEPORT
+	while u:IsKeyDown(Enum.KeyCode.LeftControl) == true do
+		mouseCFrame = GetMouseCFrame()
+		wait(0.05)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+			wait(0.1)
+
+			pl.CFrame = mouseCFrame
+			break
+		end
+	end
 
 	-- TELEPORT TO A RANDOM PLAYER IN SERVER
     if input.KeyCode == Enum.KeyCode.F then
