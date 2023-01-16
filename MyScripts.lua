@@ -3,7 +3,7 @@ local teleportingEnabled = false
 local introSaid = false
 
 if introSaid == false then
-	print("F = Random Teleport \n SPACE = Infinite Jump \n G = Find Location \n N = Start Random Bang Session \n M = Stop Random Bang Session")
+	print(" \nF = Random Teleport \n SPACE = Infinite Jump \n G = Find Location \n N = Start Random Bang Session \n M = Stop Random Bang Session")
 	introSaid = true
 end
 
