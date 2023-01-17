@@ -6,18 +6,26 @@ local banging = false
 local mouse = game.Players.LocalPlayer:GetMouse()
 
 if introSaid == false then
-	print(" \n F = Random Teleport \n SPACE = Infinite Jump \n G = Find Location \n N = Start Random Bang Session \n M = Stop Random Bang Session \n Hold CTRL + Click = Teleport to cursor location \n LEFTALT = Swimming in air")
+	warn(" \n F = Random Teleport \n SPACE = Infinite Jump \n G = Find Location \n N = Start Random Bang Session \n M = Stop Random Bang Session \n Hold CTRL + Click = Teleport to cursor location \n LEFTALT = Swimming in air")
 	introSaid = true
 end
 
 local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
 local humanoid = game.Players.LocalPlayer.Character.Humanoid
+local char = game.Players.LocalPlayer.Character
+
 
 function GetMouseCFrame() -- MOUSE CFRAME FINDER
 	return mouse.Hit
 end
 
 u.InputBegan:Connect(function(input)
+	-- RESET
+	if input.Keycode == Enum.Keycode.Y then
+		char.Humanoid.Health = 0
+		warn("oof")
+	end
+
 	-- LEFT CTRL TELEPORT
 	while u:IsKeyDown(Enum.KeyCode.LeftControl) == true do
 		mouseCFrame = GetMouseCFrame()
@@ -46,7 +54,7 @@ u.InputBegan:Connect(function(input)
 
 		local Randomplayer = tostring(Randomplayer1)
 
-		print(Randomplayer)
+		warn(Randomplayer)
 
 		humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
 		wait(0.1)
@@ -64,7 +72,7 @@ u.InputBegan:Connect(function(input)
 	-- FIND LOCATION
 	if input.KeyCode == Enum.KeyCode.G then
 		local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
-		print(pl.CFrame)
+		warn(pl.CFrame)
 	end
 
 	-- TELEPORT TO SPESIFIC LOCATION
@@ -94,7 +102,7 @@ u.InputBegan:Connect(function(input)
 
 		local Randomplayer = tostring(Randomplayer1)
 
-		print(Randomplayer)
+		warn(Randomplayer)
 
 		teleportingEnabled = true
 		banging = true
