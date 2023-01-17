@@ -21,7 +21,7 @@ end
 u.InputBegan:Connect(function(input)
 	-- LEFT ALT SWIM
 	if input.KeyCode == Enum.KeyCode.LeftAlt then	
-		end swimming == true then
+		if swimming == true then
 			humanoid:ChangeState(Enum.HumanoidStateType.Swimming)
 		end
 		if swimming == false then
