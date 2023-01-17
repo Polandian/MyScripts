@@ -2,11 +2,12 @@ local u = game:GetService("UserInputService")
 local teleportingEnabled = false
 local introSaid = false
 local banging = false
+local swimming = false
 
 local mouse = game.Players.LocalPlayer:GetMouse()
 
 if introSaid == false then
-	print(" \n F = Random Teleport \n SPACE = Infinite Jump \n G = Find Location \n N = Start Random Bang Session \n M = Stop Random Bang Session \n Hold CTRL + Click = Teleport to cursor location")
+	print(" \n F = Random Teleport \n SPACE = Infinite Jump \n G = Find Location \n N = Start Random Bang Session \n M = Stop Random Bang Session \n Hold LEFTCTRL + Click = Teleport to cursor location \n LEFTALT = Swimming in air")
 	introSaid = true
 end
 
@@ -18,7 +19,16 @@ function GetMouseCFrame() -- MOUSE CFRAME FINDER
 end
 
 u.InputBegan:Connect(function(input)
-	-- CTRL TELEPORT
+	-- LEFT ALT SWIM
+	if input.KeyCode == Enum.KeyCode.LeftAlt then
+		if swimming == false then
+			humanoid:ChangeState(Enum.HumanoidStateType.Swimming)
+		end
+		if swimming == true then
+			humanoid:ChangeState(Enum.HumanoidStateType.None)
+		end
+	end
+	-- LEFT CTRL TELEPORT
 	while u:IsKeyDown(Enum.KeyCode.LeftControl) == true do
 		mouseCFrame = GetMouseCFrame()
 		wait(0.05)
@@ -33,7 +43,7 @@ u.InputBegan:Connect(function(input)
 
 	-- TELEPORT TO A RANDOM PLAYER IN SERVER
     if input.KeyCode == Enum.KeyCode.F then
-		if banging = true then
+		if banging == true then
 			game.Players.LocalPlayer:Kick("Close the fucking app bitch")
 		end
 
