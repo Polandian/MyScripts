@@ -2,7 +2,6 @@ local u = game:GetService("UserInputService")
 local teleportingEnabled = false
 local introSaid = false
 local banging = false
-local swimming = false
 
 local mouse = game.Players.LocalPlayer:GetMouse()
 
@@ -19,17 +18,6 @@ function GetMouseCFrame() -- MOUSE CFRAME FINDER
 end
 
 u.InputBegan:Connect(function(input)
-	-- LEFT ALT SWIM
-	if input.KeyCode == Enum.KeyCode.LeftAlt then	
-		if swimming == false then
-			swimming = true
-			humanoid:ChangeState(Enum.HumanoidStateType.Swimming)
-		end
-		if swimming == true then
-			swimming = false
-			humanoid:ChangeState(Enum.HumanoidStateType.None)
-		end
-	end
 	-- LEFT CTRL TELEPORT
 	while u:IsKeyDown(Enum.KeyCode.LeftControl) == true do
 		mouseCFrame = GetMouseCFrame()
