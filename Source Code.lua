@@ -7,7 +7,7 @@ local swimming = false
 local mouse = game.Players.LocalPlayer:GetMouse()
 
 if introSaid == false then
-	print(" \n F = Random Teleport \n SPACE = Infinite Jump \n G = Find Location \n N = Start Random Bang Session \n M = Stop Random Bang Session \n Hold LEFTCTRL + Click = Teleport to cursor location \n LEFTALT = Swimming in air")
+	print(" \n F = Random Teleport \n SPACE = Infinite Jump \n G = Find Location \n N = Start Random Bang Session \n M = Stop Random Bang Session \n Hold CTRL + Click = Teleport to cursor location \n LEFTALT = Swimming in air")
 	introSaid = true
 end
 
@@ -20,11 +20,11 @@ end
 
 u.InputBegan:Connect(function(input)
 	-- LEFT ALT SWIM
-	if input.KeyCode == Enum.KeyCode.LeftAlt then
-		if swimming == false then
+	if input.KeyCode == Enum.KeyCode.LeftAlt then	
+		end swimming == true then
 			humanoid:ChangeState(Enum.HumanoidStateType.Swimming)
 		end
-		if swimming == true then
+		if swimming == false then
 			humanoid:ChangeState(Enum.HumanoidStateType.None)
 		end
 	end
