@@ -3,19 +3,21 @@ This script does NOT have a gui, at least for now.
 
 ***Also will keep getting updated if not every day, every week or month.***
 
-Don't forget to *suggest me features to add!*
+Don't forget to *suggest me features to add!* Don't forget to press F9 ;)
 *****
 Features:
 
-**Infinite Jump**
+**INVINCIBILITY**
+
+**SPEED AND JUMP POWER**
+
+**INFINITE JUMP**
 
 **CTRL + CLICK TELEPORT**
 
 **TELEPORT TO RANDOM PLAYER**
 
 **STICK TO RANDOM PLAYER**
-
-**SWIM IN AIR**
 
 **FIND LOCATION**
 
