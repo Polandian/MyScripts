@@ -2,12 +2,13 @@ local u = game:GetService("UserInputService")
 local teleportingEnabled = false
 local introSaid = false
 local banging = false
+local Players = game:GetService("Players")
 local LocalPlayer = game:GetService("Players").LocalPlayer
 
 local mouse = game.Players.LocalPlayer:GetMouse()
 
 if introSaid == false then
-	warn(" \n F = Random Teleport \n SPACE = Infinite Jump \n G = Find Location \n N = Start Random Bang Session \n M = Stop Random Bang Session \n Hold CTRL + Click = Teleport to cursor location \n LEFTALT = Swimming in air \n P = Increase Speed + Jump \n U = Invincibility")
+		warn(" \n F = Random Teleport \n SPACE = Infinite Jump \n G = Find Location \n N = Start Random Bang Session \n M = Stop Random Bang Session \n Hold CTRL + Click = Teleport to cursor location \n P = Increase Speed + Jump \n Y = Reset")
 	introSaid = true
 end
 
@@ -20,29 +21,27 @@ function GetMouseCFrame() -- MOUSE CFRAME FINDER
 	return mouse.Hit
 end
 
+--INVINCIBILITY
+local function Invincibility()
+	if LocalPlayer.Character then
+     	for i, v in pairs(LocalPlayer.Character:GetChildren()) do
+            if v.Name == "hitbox" then
+            	v:Destroy()
+        	end
+    	end
+	end
+end
+humanoid.MaxHealth = 1000000000000000000000
+humanoid.Health = 100000000000000000000000
+humanoid.HealthDisplayDistance = 500
+Invincibility(LocalPlayer)
+warn("Invincibility granted")
+
 u.InputBegan:Connect(function(input)
 	-- SPEED AND JUMP
 	if input.KeyCode == Enum.KeyCode.P then
 		humanoid.WalkSpeed = 100
 		humanoid.JumpPower = 90
-	end
-	-- INVINCIBILITY
-	if input.KeyCode == Enum.KeyCode.U then
-		local function Invincibility()
-    		if LocalPlayer.Character then
-        		for i, v in pairs(LocalPlayer.Character:GetChildren()) do
-            		if v.Name == "hitbox" then
-            			v:Destroy()
-            		end
-       	 		end
-    		end
-		end
-
-		humanoid.MaxHealth = math.huge
-		humanoid.Health = math.huge
-		humanoid.HealthDisplayDistance = 500
-		Invincibility(LocalPlayer)
-		warn("Invincibility granted")
 	end
 	-- LEFT CTRL TELEPORT
 	while u:IsKeyDown(Enum.KeyCode.LeftControl) == true do
@@ -134,7 +133,7 @@ u.InputBegan:Connect(function(input)
 	end
 	-- RESET
 	if input.KeyCode == Enum.KeyCode.Y then
-		char.Humanoid.Health = 0
+		humanoid.Health = humanoid.Health - humanoid.Health
 		warn("oof")
 	end
 end)
