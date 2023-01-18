@@ -2,6 +2,7 @@ local u = game:GetService("UserInputService")
 local teleportingEnabled = false
 local introSaid = false
 local banging = false
+local LocalPlayer = game:GetService("Players").LocalPlayer
 
 local mouse = game.Players.LocalPlayer:GetMouse()
 
@@ -20,12 +21,29 @@ function GetMouseCFrame() -- MOUSE CFRAME FINDER
 end
 
 u.InputBegan:Connect(function(input)
-	-- RESET
-	if input.Keycode == Enum.Keycode.Y then
-		char.Humanoid.Health = 0
-		warn("oof")
+	-- SPEED AND JUMP
+	if input.KeyCode == Enum.KeyCode.P then
+		humanoid.WalkSpeed = 100
+		humanoid.JumpPower = 90
 	end
+	-- INVINCIBILITY
+	if input.KeyCode == Enum.KeyCode.U then
+		local function Invincibility()
+    		if LocalPlayer.Character then
+        		for i, v in pairs(LocalPlayer.Character:GetChildren()) do
+            		if v.Name == "hitbox" then
+            			v:Destroy()
+            		end
+       	 		end
+    		end
+		end
 
+		humanoid.MaxHealth = math.huge
+		humanoid.Health = math.huge
+		humanoid.HealthDisplayDistance = 500
+		Invincibility(LocalPlayer)
+		warn("Invincibility granted")
+	end
 	-- LEFT CTRL TELEPORT
 	while u:IsKeyDown(Enum.KeyCode.LeftControl) == true do
 		mouseCFrame = GetMouseCFrame()
@@ -113,5 +131,10 @@ u.InputBegan:Connect(function(input)
 			
 			pl.CFrame = game.Players[Randomplayer].Character.HumanoidRootPart.CFrame
 		end	
+	end
+	-- RESET
+	if input.KeyCode == Enum.KeyCode.Y then
+		char.Humanoid.Health = 0
+		warn("oof")
 	end
 end)
