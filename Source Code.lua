@@ -7,7 +7,7 @@ local LocalPlayer = game:GetService("Players").LocalPlayer
 local mouse = game.Players.LocalPlayer:GetMouse()
 
 if introSaid == false then
-	warn(" \n F = Random Teleport \n SPACE = Infinite Jump \n G = Find Location \n N = Start Random Bang Session \n M = Stop Random Bang Session \n Hold CTRL + Click = Teleport to cursor location \n LEFTALT = Swimming in air")
+	warn(" \n F = Random Teleport \n SPACE = Infinite Jump \n G = Find Location \n N = Start Random Bang Session \n M = Stop Random Bang Session \n Hold CTRL + Click = Teleport to cursor location \n LEFTALT = Swimming in air \n P = Increase Speed + Jump \n U = Invincibility")
 	introSaid = true
 end
 
