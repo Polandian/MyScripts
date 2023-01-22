@@ -1,11 +1,11 @@
-## Roblox-Scripts
+# Roblox-Scripts
 This script does NOT have a gui, at least for now.
 
 ***Also will keep getting updated if not every day, every week or month.***
 
 Don't forget to *suggest me features to add!* Don't forget to press F9 ;)
 *****
-## Features:
+# Features:
 
 **INVINCIBILITY**
 
@@ -23,7 +23,7 @@ Don't forget to *suggest me features to add!* Don't forget to press F9 ;)
 
 **TELEPORT TO SPESIFIC LOCATION (not avaible in moment)**
 *****
-My social medias (to reach me)
+# My social medias (to reach me)
 
 **Discord:** ***teacher541#5400***
 
