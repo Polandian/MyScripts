@@ -8,7 +8,7 @@ local LocalPlayer = game:GetService("Players").LocalPlayer
 local mouse = game.Players.LocalPlayer:GetMouse()
 
 if introSaid == false then
-		warn(" \n F = Random Teleport \n SPACE = Infinite Jump \n G = Find Location \n N = Start Random Bang Session \n M = Stop Random Bang Session \n Hold CTRL + Click = Teleport to cursor location \n P = Increase Speed + Jump \n Y = Reset")
+		warn(" \n F = Random Teleport \n SPACE = Infinite Jump \n G = Find Location \n N = Start Random Bang Session \n M = Stop Random Bang Session \n Hold CTRL + Click = Teleport to cursor location \n O = Increase Speed + Jump \n P = Default Speed+ Jump \n Y = Reset")
 	introSaid = true
 end
 
@@ -39,9 +39,13 @@ warn("Invincibility granted")
 
 u.InputBegan:Connect(function(input)
 	-- SPEED AND JUMP
-	if input.KeyCode == Enum.KeyCode.P then
+	if input.KeyCode == Enum.KeyCode.O then --INCREASE
 		humanoid.WalkSpeed = 100
 		humanoid.JumpPower = 90
+	end
+	if input.KeyCode == Enum.KeyCode.P then --DECREASE
+		humanoid.WalkSpeed = 16
+		humanoid.JumpPower = 50
 	end
 	-- LEFT CTRL TELEPORT
 	while u:IsKeyDown(Enum.KeyCode.LeftControl) == true do
