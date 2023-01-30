@@ -31,12 +31,10 @@ local function Invincibility()
     	end
 	end
 end
-while true do
-	wait(0.1)
-	humanoid.MaxHealth = 1000000000000000000000
-	humanoid.Health = 100000000000000000000000
-	humanoid.HealthDisplayDistance = 500
-end
+humanoid.MaxHealth = 1000000000000000000000
+humanoid.Health = 100000000000000000000000
+humanoid.HealthDisplayDistance = 500
+
 Invincibility(LocalPlayer)
 warn("Invincibility granted")
 
