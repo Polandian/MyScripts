@@ -25,10 +25,6 @@ Don't forget to *suggest me features to add!* Don't forget to press F9 ;)
 *****
 # My social medias (to reach me)
 
-**Discord:** ***teacher541#5400***
-
-**Instagram:** ***https://www.instagram.com/muofer/***
-
-**Twitch:** ***https://www.twitch.tv/feelthebfg***
+**Discord:** ***chicivi***
 
 **Youtube:** ***https://www.youtube.com/channel/UCJfBMfj5TOMX4n3DjRbkZMw***
